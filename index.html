@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Music</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Horizon Music</h1>
+    <p>Discover up-and-coming artists and trending songs</p>
+</header>
+
+<nav>
+    <input type="text" id="search" placeholder="Search songs or artists...">
+</nav>
+
+<div class="song-list" id="songList">
+    <!-- Songs will load here dynamically -->
+</div>
+
+<div class="player" id="player" style="display:none;">
+    <span id="currentSong">Now Playing: </span>
+    <audio id="audioPlayer" controls></audio>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
