@@ -1,31 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Horizon Music</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+import React from 'react'; import HorizonMusicPlayer from './HorizonMusicPlayer';
 
-<header>
-    <h1>Horizon Music</h1>
-    <p>Discover up-and-coming artists and trending songs</p>
-</header>
+export default function HorizonMusicHome() { return ( <div className="min-h-screen bg-white text-gray-900 font-sans"> {/* Header */} <header className="bg-white shadow-md"> <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"> <h1 className="text-2xl font-bold">Horizon Music</h1> <nav className="space-x-6 text-gray-700"> <a href="#home" className="hover:text-black">Home</a> <a href="#about" className="hover:text-black">About</a> <a href="#stream" className="hover:text-black">Stream</a> </nav> </div> </header>
 
-<nav>
-    <input type="text" id="search" placeholder="Search songs or artists...">
-</nav>
+{/* Hero / About Section */}
+  <section id="home" className="max-w-6xl mx-auto px-6 py-16 text-center">
+    <h2 className="text-3xl font-semibold mb-4">Welcome to Horizon Music</h2>
+    <p className="text-gray-700 max-w-2xl mx-auto">
+      Horizon Music is the official streaming branch of Horizon Group. Explore the latest tracks from talented artists,
+      discover new music, and enjoy a seamless listening experience.
+    </p>
+  </section>
 
-<div class="song-list" id="songList">
-    <!-- Songs will load here dynamically -->
+  <section id="about" className="max-w-6xl mx-auto px-6 py-16 bg-gray-50 rounded-xl shadow-inner mb-12">
+    <h3 className="text-2xl font-semibold mb-4 text-center">About Horizon Music</h3>
+    <p className="text-gray-700 text-center max-w-3xl mx-auto">
+      Horizon Music was created to provide a platform for artists and listeners alike. Our mission is to celebrate
+      music, culture, and creativity while giving listeners a smooth, modern streaming experience.
+    </p>
+  </section>
+
+  {/* Music Player Section */}
+  <section id="stream" className="max-w-6xl mx-auto px-6 mb-12">
+    <h3 className="text-2xl font-semibold mb-6 text-center">Listen Now</h3>
+    <HorizonMusicPlayer />
+  </section>
+
+  {/* Footer */}
+  <footer className="bg-white border-t mt-12">
+    <div className="max-w-6xl mx-auto px-6 py-6 text-center text-gray-500 text-sm">
+      &copy; {new Date().getFullYear()} Horizon Music. Powered by Horizon Group.
+    </div>
+  </footer>
 </div>
 
-<div class="player" id="player" style="display:none;">
-    <span id="currentSong">Now Playing: </span>
-    <audio id="audioPlayer" controls></audio>
-</div>
+); }
 
-<script src="app.js"></script>
-</body>
-</html>
+
